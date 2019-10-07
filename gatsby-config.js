@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `Hey, I'm Tobi!`,
+    author: `Tobias Droth`,
+    description: `My blog containing various stuff.`,
+    siteUrl: `https://droth.net/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `thetob`,
     },
   },
   plugins: [
@@ -46,19 +46,12 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Hey, I'm Tobi`,
+        short_name: `A Blog.`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
