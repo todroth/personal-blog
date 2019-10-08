@@ -26,6 +26,7 @@ const Bio = () => {
           author
           social {
             twitter
+            instagram
           }
         }
       }
@@ -42,7 +43,7 @@ const Bio = () => {
     >
       <Image
         fixed={data.avatar.childImageSharp.fixed}
-        alt={author}
+        alt={`Profile picture by ${author}`}
         style={{
           marginRight: rhythm(1 / 2),
           marginBottom: 0,
@@ -54,12 +55,16 @@ const Bio = () => {
         }}
       />
       <p>
-        Written by <strong>{author}</strong> who lives and works in Konstanz
-        building useful things.
+        Written by Software Engineer and hobby Climber <strong>{author}</strong>{" "}
+        who lives and works in Konstanz.
         {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
+        <a href={`https://www.instagram.com/${social.instagram}/`}>
+          You should follow him on Instagram
         </a>
+        {` `}
+        or
+        {` `}
+        <a href={`https://www.twitter.com/${social.twitter}/`}>on Twitter</a>.
       </p>
     </div>
   )

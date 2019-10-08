@@ -2,10 +2,11 @@ module.exports = {
   siteMetadata: {
     title: `Hey, I'm Tobi!`,
     author: `Tobias Droth`,
-    description: `My blog containing various stuff.`,
+    description: `A blog by Software Engineer Tobias Droth from Konstanz, Germany`,
     siteUrl: `https://droth.net/`,
     social: {
       twitter: `thetob`,
+      instagram: `nordenderwelt`,
     },
   },
   plugins: [
@@ -51,9 +52,9 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Hey, I'm Tobi`,
-        short_name: `A Blog.`,
+        short_name: `A blog by Software Engineer Tobias Droth from Konstanz, Germany`,
         start_url: `/`,
-        background_color: `#ffffff`,
+        background_color: `#0066ff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `content/assets/gatsby-icon.png`,
