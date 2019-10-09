@@ -52,9 +52,9 @@ Optional<String> stringOpt = Optional.ofNullable(someStringOrNull);
 Optional<String> stringOpt = Optional.empty();
 ```
 
-`Optional::empty` does not take any parameters, because is does not contain a value. That is the replacement of your Nulls.
+`Optional::empty` does not take any parameters, because it does not contain a value. This is the replacement of your Nulls in your code.
 
-## How do I get the Optional's content?
+## How do I retrieve the Optional's content?
 
 To retrieve the actual value from the Optional, there are some ways to go. The most obvious would be to call `get()`. But behold! If you call `get()` on an empty Optional, a `NoSuchElementException` gets thrown and you'll have the same problems like before when you used Null. So, you should check for a value to be present inside the Optional, and that's what `isPresent()` is for.
 
@@ -77,7 +77,7 @@ Doing things that way is better than having to check for Null, because it's more
 opt.ifPresent(value => value.doSomething());
 ```
 
-`ifPresent` looks kind of "functional", but it isn't. The `consumer` parameter can't return any value, it probably does have side effects, which is not functional at all. To perform actions on the Optional's content a more functional way, there are some typical "functional" methods defined:
+`ifPresent` looks kind a bit like "functional programming", but it really isn't. The `consumer` parameter can't return any value. So it very likely does have side effects, which is not functional at all. To perform actions on the Optional's content a more functional way, there are some typical "functional" methods defined:
 
 ```java
 String transformedContent = stringOpt
@@ -93,7 +93,7 @@ Utilizing these transformative methods to Optionals, you can use them in a stric
 
 The easiest way to not have Nulls in your code base is to never use Nulls from the beginning. When you are writing a method, and there's a case where you want to return Null, change this method's signature. Instead of returning a type, return an Optional of that type instead.
 
-So, when you want to grab a pizza slice from a pizza box, but you're not sure if there is some pizza left, you could do it like that:
+So, when you want to grab a pizza slice from a pizza box, you could do it like that:
 
 ```java
 public PizzaSlice grabASlice(PizzaBox box) {
@@ -104,11 +104,11 @@ public PizzaSlice grabASlice(PizzaBox box) {
 }
 ```
 
-Now you, the person looking forward to a hot and cheesy slice of pizza, have to check if you really got a slice in your hand after you retrieved it from the box. However, in your huge anticipation of a greasy slice of your favourite disk-shape food, you're very likely to forget checking. Bite marks in your hand, disappointment (also known as `NullPointerException`s) are the consequences:
+Now you, the person looking forward to a hot and cheesy slice of pizza, will have to check if you really got a slice in your hand after you retrieved it from the box. However, in your huge anticipation of a greasy slice of your favourite disk-shape food, you're very likely to forget checking. Bite marks in your hand and disappointment (also known as `NullPointerException`s) are the consequences:
 
 ```java
 PizzaSlice slice = grabASlice(emptyBox);
-slice.takeABite(); // bite marks, pain aka NullPointerException
+slice.takeABite(); // bite marks and pain aka NullPointerException
 ```
 
 That's why it's important to manage expectations beforehand:
@@ -131,7 +131,7 @@ if (slice.isPresent()) {
 } // else, disappointment but no bite marks
 ```
 
-The `.isPresent()` check followed by `.get()` is not the nicest way to unpack things here. A bit more descriptive is the following call, which does the exact same thing.
+Or, shorter:
 
 ```java
 grabASlice(emptyBox).ifPresent(PizzaSlice::takeABite);
@@ -139,4 +139,4 @@ grabASlice(emptyBox).ifPresent(PizzaSlice::takeABite);
 
 ## Conclusion
 
-There really is no reason not to using Optionals and getting rid of Nulls in your Java code. I consider methods, that sometimes return Null, as a thing of the past! Java has evolved and is still evolving. You should not "go with the flow" blindly, because new is not always better. Question changes and ask yourself, if some renewal really improves your code. ... But in this case: Nulls are bad. Don't use them. Like, never. Just don't. They bring pain and disappointment.
+There really is no reason not to start using Optionals and getting rid of Nulls in your Java code. I consider methods, which sometimes return Null, as a thing of the past! Java has evolved and is still evolving. Surely, you should not "go with the flow" blindly. New is not always better! Question changes and ask yourself, if some renewal really improves your code. ... But in this case: Nulls are bad. Don't use them. Like, never. Just don't. They bring pain and disappointment.
