@@ -1,7 +1,7 @@
 ---
-title: Get rid of Null in your Java code and experience the power of Optionals
+title: Get rid of Nulls in your Java code and experience the power of Optionals
 date: "2019-10-09T15:52:00.000Z"
-description: "In Java 8, Optionals were introduced. They can help you getting rid of null values, null checks, and a whole class of possible bugs."
+description: "In Java 8, Optionals were introduced. They can help you getting rid of Null values, Null checks, and a whole class of possible bugs."
 ---
 
 In Java 8, Optionals were introduced. They can help you getting rid of Null values, Null checks, and a whole class of possible bugs.
