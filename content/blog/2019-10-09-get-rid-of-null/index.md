@@ -77,7 +77,7 @@ Doing things that way is better than having to check for Null, because it's more
 opt.ifPresent(value => value.doSomething());
 ```
 
-`ifPresent` looks kind a bit like "functional programming", but it really isn't. The `consumer` parameter can't return any value. So it very likely does have side effects, which is not functional at all. To perform actions on the Optional's content a more functional way, there are some typical "functional" methods defined:
+`ifPresent` looks a bit like "functional programming", but it really isn't. The `consumer` parameter can't return any value. So it very likely does have side effects, which is not functional at all. To perform actions on the Optional's content a more functional way, there are some typical "functional" methods defined:
 
 ```java
 String transformedContent = stringOpt
